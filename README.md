@@ -64,27 +64,3 @@ export default function NetflixLikeUI() { return ( <div className="min-h-screen 
 function CarouselRow({ title, items }) { return ( <section className="mb-8"> <h2 className="text-xl font-semibold mb-3">{title}</h2> <div className="relative"> <div className="flex gap-3 overflow-x-auto no-scrollbar py-2"> {items.map((it) => ( <Card key={it.id} item={it} /> ))} </div> </div> </section> ); }
 
 function Card({ item }) { return ( <div className="min-w-[160px] sm:min-w-[200px] lg:min-w-[240px] bg-gray-800 rounded-md overflow-hidden shadow-lg hover:scale-105 transform transition duration-200 cursor-pointer"> <div className="relative h-36 sm:h-44 lg:h-56"> <img src={item.image} alt={item.title} className="w-full h-full object-cover" /> <div className="absolute left-2 top-2 bg-black/50 px-2 py-1 text-xs rounded">⭐ {item.rating}</div> </div> <div className="p-2"> <div className="text-sm font-semibold truncate">{item.title}</div> <div className="text-xs text-gray-400 mt-1">Action • Drama</div> </div> </div> ); }
-
-/* How to use:
-
-1. Ensure your React app is configured with Tailwind CSS.
-
-
-2. Drop this file into your components folder and import it in App.jsx
-
-
-3. Tailwind utility classes provide responsive layout and spacing.
-
-
-
-Optional enhancements you can add:
-
-Replace placeholder images with your own artwork or poster URLs.
-
-Hook up a real API for rows (e.g., TMDB) and lazy-load images.
-
-Add keyboard navigation and accessibility labels.
-
-Add framer-motion for richer animations. */
-
-
